@@ -76,7 +76,6 @@ function Patients () {
       </Row>
       <Table striped bordered hover>
         <thead>
-
           <tr>
             <th />
             <th>Name</th>

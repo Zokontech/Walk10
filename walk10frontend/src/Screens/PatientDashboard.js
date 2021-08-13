@@ -44,12 +44,12 @@ function PatientForm () {
         return res.json()
       })
       .then(p => {
-        setPatient(p)
-        setName(p.name)
-        setPhone(p.phone)
-        setEmail(p.email)
-        setAddress(p.address)
-        setBday(p.birthday)
+        setPatient(p);
+        setName(p.name);
+        setPhone(p.phone);
+        setEmail(p.email);
+        setAddress(p.address);
+        setBday(p.birthday);
       })
     fetch(`/trials/${patientid}`).then(
       res => {

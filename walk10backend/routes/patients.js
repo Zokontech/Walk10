@@ -31,7 +31,7 @@ router.post('/', function (req, res, next) {
 })
 router.get('/', function (req, res, next) {
   db.serialize(() => {
-    db.all('SELECT * FROM patients;', (err, rows) => {
+    db.all('SELECT * FROM patients ORDER BY name;', (err, rows) => {
       if (err) {
         console.error(err.message)
       }
