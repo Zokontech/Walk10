@@ -146,7 +146,7 @@ function TrialForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='trialForm.aslow3'>
+            <Form.Group className='mb-3' controlId='trialForm.slow3'>
               <Form.Label>Trial 3</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' step='any' onChange={e => setSlow3(e.target.value)} />
