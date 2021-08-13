@@ -12,7 +12,7 @@ $ npm install
 cd walk10backend
 $ npm install
 ```
-Node.js and npm are required to run this project and install dependencies.
+Node.js>=14.17.5 and npm>=6.14.14 are required to run this project and install dependencies.
 
 # Running
 
