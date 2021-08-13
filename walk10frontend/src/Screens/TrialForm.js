@@ -117,7 +117,7 @@ function TrialForm (props) {
             <Form.Group className='mb-3' controlId='trialForm.distance'>
               <Form.Label>Distance</Form.Label>
               <InputGroup>
-                <Form.Control required type='number' value='6' onChange={e => setDistance(e.target.value)} />
+                <Form.Control required type='number' defaultValue='6' onChange={e => setDistance(e.target.value)} />
                 <InputGroup.Text>m</InputGroup.Text>
               </InputGroup>
             </Form.Group>

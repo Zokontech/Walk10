@@ -24,7 +24,7 @@ router.post('/', function (req, res, next) {
         }
       })
     })
-    res.send('respond with a resource')
+    res.sendStatus(200)
   }
 })
 router.get('/', function (req, res, next) {
@@ -80,7 +80,7 @@ router.put('/:patientID', function (req, res, next) {
         }
       })
     })
-    res.send('respond with a resource')
+    res.sendStatus(200)
   }
 })
 module.exports = router
