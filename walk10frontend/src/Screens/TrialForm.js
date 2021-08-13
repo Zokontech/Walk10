@@ -6,7 +6,6 @@ function TrialForm (props) {
   useEffect(() => {
     fetch('/patients').then(
       res => {
-        console.log(res)
         return res.json()
       })
       .then(p => {
@@ -27,7 +26,6 @@ function TrialForm (props) {
 
   const onFormSubmit = e => {
     e.preventDefault()
-    console.log(patient)
     const data = {
       patientid: patient[0].id,
       distance: distance,

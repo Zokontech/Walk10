@@ -39,8 +39,7 @@ function PatientForm () {
   }
   useEffect(() => {
     fetch(`/patients/${patientid}`).then(
-      res => {
-        console.log(res)
+      res => {  
         return res.json()
       })
       .then(p => {
@@ -53,7 +52,6 @@ function PatientForm () {
       })
     fetch(`/trials/${patientid}`).then(
       res => {
-        console.log(res)
         return res.json()
       })
       .then(p => {
@@ -70,7 +68,6 @@ function PatientForm () {
       address: address,
       birthday: bday
     }
-    console.log(data)
     fetch(`/patients/${patient?.id}`,
       {
         method: 'put',

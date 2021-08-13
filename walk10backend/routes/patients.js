@@ -6,7 +6,6 @@ function quote (string) {
   return "'" + string + "'"
 }
 router.post('/', function (req, res, next) {
-  console.log(req.body)
   if (req?.body?.name === undefined || req?.body?.address === undefined || req?.body?.birthday === undefined) {
     res.send('missing required params')
   } else {
@@ -19,7 +18,6 @@ router.post('/', function (req, res, next) {
         ${quote(req.body.address)}, 
         date(${quote(req.body.birthday)}));`
 
-      console.log(command)
       db.run(command, (err) => {
         if (err) {
           console.error(err.message)
@@ -35,13 +33,11 @@ router.get('/', function (req, res, next) {
       if (err) {
         console.error(err.message)
       }
-      console.log(rows)
       res.send(rows)
     })
   })
 })
 router.get('/:patientID', function (req, res, next) {
-  console.log(req.params)
   db.serialize(() => {
     db.get(`SELECT * FROM patients WHERE id=${parseInt(req.params.patientID)};`, (err, row) => {
       if (err) {
@@ -50,14 +46,12 @@ router.get('/:patientID', function (req, res, next) {
       if (row === undefined) {
         res.sendStatus(404)
       } else {
-        console.log(row)
         res.send(row)
       }
     })
   })
 })
 router.delete('/:patientID', function (req, res, next) {
-  console.log(req.params)
   db.serialize(() => {
     db.run(`DELETE FROM patients WHERE id=${parseInt(req.params.patientID)};`, (err, row) => {
       if (err) {
@@ -69,10 +63,8 @@ router.delete('/:patientID', function (req, res, next) {
   })
 })
 router.put('/:patientID', function (req, res, next) {
-  console.log('hello? mr. obama')
   if (req?.params?.patientID === undefined || req?.body?.name === undefined || req?.body?.address === undefined || req?.body?.birthday === undefined) {
     res.send('missing required params')
-    console.log('here?')
   } else {
     db.serialize(() => {
       const command = `UPDATE patients 
@@ -82,8 +74,6 @@ router.put('/:patientID', function (req, res, next) {
         address=${quote(req.body.address)},
         birthday=date(${quote(req.body.birthday)})
         WHERE id=${req.params.patientID};`
-
-      console.log(command)
       db.run(command, (err) => {
         if (err) {
           console.error(err.message)

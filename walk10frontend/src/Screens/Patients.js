@@ -32,11 +32,9 @@ function Patients () {
   useEffect(() => {
     fetch('/patients').then(
       res => {
-        console.log(res)
         return res.json()
       })
       .then(patients => {
-        console.log(patients)
         setState(patients)
       })
   }, [changed])

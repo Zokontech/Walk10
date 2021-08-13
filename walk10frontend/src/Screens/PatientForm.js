@@ -12,7 +12,6 @@ function PatientForm (props) {
   const [zip, setZip] = useState()
   const onFormSubmit = e => {
     e.preventDefault()
-    console.log(bday)
     const data = {
       name: name,
       phone: phone,
@@ -20,7 +19,6 @@ function PatientForm (props) {
       address: `${street}${street2 !== undefined ? ' ' + street2 : ''} ${city}, ${state} ${zip}`,
       birthday: bday
     }
-    console.log(data)
     fetch('/patients',
       {
         method: 'post',
