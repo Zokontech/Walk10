@@ -16,8 +16,10 @@ function TrialForm (props) {
   const [distance, setDistance] = useState(6)
   const [slow1, setSlow1] = useState()
   const [slow2, setSlow2] = useState()
+  const [slow3, setSlow3] = useState()
   const [fast1, setFast1] = useState()
   const [fast2, setFast2] = useState()
+  const [fast3, setFast3] = useState()
   const [slowspeed, setSlowspeed] = useState()
   const [fastspeed, setFastspeed] = useState()
   const [assistlevel, setAssistlevel] = useState()
@@ -31,8 +33,10 @@ function TrialForm (props) {
       distance: distance,
       slow1: slow1,
       slow2: slow2,
+      slow3: slow3,
       fast1: fast1,
       fast2: fast2,
+      fast3: fast3,
       slowspeed: slowspeed,
       fastspeed: fastspeed,
       assistlevel: assistlevel,
@@ -53,10 +57,10 @@ function TrialForm (props) {
   }
   useEffect(() => {
     if (distance) {
-      setSlowspeed(distance / ((parseFloat(slow1) + parseFloat(slow2)) / 2))
-      setFastspeed(distance / ((parseFloat(fast1) + parseFloat(fast2)) / 2))
+      setSlowspeed(distance / ((parseFloat(slow1) + parseFloat(slow2) + parseFloat(slow3)) / 3))
+      setFastspeed(distance / ((parseFloat(fast1) + parseFloat(fast2) + parseFloat(fast3)) / 3))
     }
-  }, [slow1, slow2, fast1, fast2, distance])
+  }, [slow1, slow2, fast1, fast2, distance, fast3, slow3])
 
   const renderTooltip = (props) => (
     <Tooltip id='button-tooltip' {...props}>
@@ -143,7 +147,16 @@ function TrialForm (props) {
           </Col>
           <Col>
             <Form.Group className='mb-3' controlId='patientForm.assist'>
-              <Form.Label>Average Speed</Form.Label>
+              <Form.Label>Trial 3</Form.Label>
+              <InputGroup>
+                <Form.Control required type='number' step='any' onChange={e => setSlow3(e.target.value)} />
+                <InputGroup.Text>s</InputGroup.Text>
+              </InputGroup>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group className='mb-3' controlId='patientForm.assist'>
+              <Form.Label>Avg. Speed</Form.Label>
               <InputGroup>
                 <Form.Control readOnly type='number' value={slowspeed || 0} />
                 <InputGroup.Text>m/s</InputGroup.Text>
@@ -175,7 +188,16 @@ function TrialForm (props) {
           </Col>
           <Col>
             <Form.Group className='mb-3' controlId='patientForm.assist'>
-              <Form.Label>Average Speed</Form.Label>
+              <Form.Label>Trial 3</Form.Label>
+              <InputGroup>
+                <Form.Control required type='number' step='any' onChange={e => setFast3(e.target.value)} />
+                <InputGroup.Text>s</InputGroup.Text>
+              </InputGroup>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group className='mb-3' controlId='patientForm.assist'>
+              <Form.Label>Avg. Speed</Form.Label>
               <InputGroup>
                 <Form.Control readOnly type='number' value={fastspeed || 0} />
                 <InputGroup.Text>m/s</InputGroup.Text>

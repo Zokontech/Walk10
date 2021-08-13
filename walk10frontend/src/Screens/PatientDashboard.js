@@ -203,9 +203,11 @@ function PatientForm () {
             <th>Assistance Level</th>
             <th>Normal Trial 1</th>
             <th>Normal Trial 2</th>
+            <th>Normal Trial 3</th>
             <th>Normal Avg. Speed</th>
             <th>Fast Trial 1</th>
             <th>Fast Trial 2</th>
+            <th>Fast Trial 3</th>
             <th>Fast Avg. Speed</th>
             <th>Notes</th>
           </tr>
@@ -219,9 +221,11 @@ function PatientForm () {
               <td>{i?.assistlevel}</td>
               <td>{i?.slow1}</td>
               <td>{i?.slow2}</td>
+              <td>{i?.slow3}</td>
               <td>{i?.slowspeed}</td>
               <td>{i?.fast1}</td>
               <td>{i?.fast2}</td>
+              <td>{i?.fast3}</td>
               <td>{i?.fastspeed}</td>
               <td>{i?.notes}</td>
             </tr>)}
