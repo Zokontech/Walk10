@@ -57,7 +57,7 @@ function PatientForm () {
       .then(p => {
         setTrials(p)
       })
-  }, [changed])
+  }, [changed, patientid])
 
   const submitUpdate = () => {
     const data = {
@@ -231,4 +231,3 @@ function PatientForm () {
   )
 }
 export default PatientForm
-// street line 1/2 city state/province
