@@ -84,7 +84,7 @@ function TrialForm (props) {
           <Form.Label>Select Patient</Form.Label>
           <Typeahead
             required
-            id='patientForm.name'
+            id='trialForm.name'
             onChange={setPatient}
             options={patients}
             labelKey={(option) => `${option.name || ''}`}
@@ -93,7 +93,7 @@ function TrialForm (props) {
           />
         </Form.Group>
 
-        <Form.Group className='mb-3' controlId='patientForm.assist'>
+        <Form.Group className='mb-3' controlId='trialForm.time'>
           <Form.Label>Time of Walk Test</Form.Label>
           <Form.Control required type='datetime-local' onChange={e => setTime(e.target.value)} />
         </Form.Group>
@@ -106,7 +106,7 @@ function TrialForm (props) {
               delay={{ show: 250, hide: 400 }}
               overlay={renderTooltip}
             >
-              <Form.Group className='mb-3' controlId='patientForm.assist'>
+              <Form.Group className='mb-3' controlId='trialForm.assist'>
 
                 <Form.Label>Assistance Level</Form.Label>
                 <Form.Control required type='number' min='0' max='7' step='1' onChange={e => setAssistlevel(e.target.value)} />
@@ -114,7 +114,7 @@ function TrialForm (props) {
             </OverlayTrigger>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.distance'>
               <Form.Label>Distance</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' value='6' onChange={e => setDistance(e.target.value)} />
@@ -128,7 +128,7 @@ function TrialForm (props) {
 
         <Row>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.slow1'>
               <Form.Label>Trial 1</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' step='any' onChange={e => setSlow1(e.target.value)} />
@@ -137,7 +137,7 @@ function TrialForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.slow2'>
               <Form.Label>Trial 2</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' step='any' onChange={e => setSlow2(e.target.value)} />
@@ -146,7 +146,7 @@ function TrialForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.aslow3'>
               <Form.Label>Trial 3</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' step='any' onChange={e => setSlow3(e.target.value)} />
@@ -155,7 +155,7 @@ function TrialForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.slowspeed'>
               <Form.Label>Avg. Speed</Form.Label>
               <InputGroup>
                 <Form.Control readOnly type='number' value={slowspeed || 0} />
@@ -169,7 +169,7 @@ function TrialForm (props) {
 
         <Row>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.fast1'>
               <Form.Label>Trial 1</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' step='any' onChange={e => setFast1(e.target.value)} />
@@ -178,7 +178,7 @@ function TrialForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.fast2'>
               <Form.Label>Trial 2</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' step='any' onChange={e => setFast2(e.target.value)} />
@@ -187,7 +187,7 @@ function TrialForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.fast3'>
               <Form.Label>Trial 3</Form.Label>
               <InputGroup>
                 <Form.Control required type='number' step='any' onChange={e => setFast3(e.target.value)} />
@@ -196,7 +196,7 @@ function TrialForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.assist'>
+            <Form.Group className='mb-3' controlId='trialForm.fastspeed'>
               <Form.Label>Avg. Speed</Form.Label>
               <InputGroup>
                 <Form.Control readOnly type='number' value={fastspeed || 0} />

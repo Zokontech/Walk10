@@ -51,7 +51,7 @@ function PatientForm (props) {
           <Form.Control type='tel' onChange={e => setPhone(e.target.value)} />
         </Form.Group>
 
-        <Form.Group className='mb-3' controlId='patientForm.phone'>
+        <Form.Group className='mb-3' controlId='patientForm.bday'>
           <Form.Label>Patient Birthday</Form.Label>
           <Form.Control required type='date' onChange={e => setBday(e.target.value)} />
         </Form.Group>
@@ -61,7 +61,7 @@ function PatientForm (props) {
           <Form.Control required type='text' onChange={e => setStreet(e.target.value)} />
         </Form.Group>
 
-        <Form.Group className='mb-3' controlId='patientForm.street'>
+        <Form.Group className='mb-3' controlId='patientForm.street2'>
           <Form.Label>Address Line 2</Form.Label>
           <Form.Control type='text' onChange={e => setStreet2(e.target.value)} />
         </Form.Group>
@@ -80,7 +80,7 @@ function PatientForm (props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className='mb-3' controlId='patientForm.state'>
+            <Form.Group className='mb-3' controlId='patientForm.zip'>
               <Form.Label>Zip Code</Form.Label>
               <Form.Control required type='text' onChange={e => setZip(e.target.value)} />
             </Form.Group>

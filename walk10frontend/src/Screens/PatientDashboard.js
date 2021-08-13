@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { LineChart, XAxis, CartesianGrid, Line, Tooltip } from 'recharts'
 import TrialForm from './TrialForm'
 import { TrashFill } from 'react-bootstrap-icons'
-function PatientForm () {
+function PatientDashboard () {
   const { patientid } = useParams()
   const [name, setName] = useState()
   const [email, setEmail] = useState()
@@ -83,7 +83,7 @@ function PatientForm () {
       <Row>
         <Col>
           {edit
-            ? <Form.Group className='mb-3' controlId='patientForm.name'>
+            ? <Form.Group className='mb-3' controlId='patientEdit.name'>
               <Form.Control size='lg' required type='text' defaultValue={patient?.name} onChange={e => setName(e.target.value)} />
             </Form.Group>
             : <h1>{patient?.name}</h1>}
@@ -129,7 +129,7 @@ function PatientForm () {
                 <th style={{ textAlign: 'right' }}>Email</th>
                 <td>
                   {edit
-                    ? <Form.Group className='mb-3' controlId='patientForm.email'>
+                    ? <Form.Group className='mb-3' controlId='patientEdit.email'>
                       <Form.Control type='email' defaultValue={patient?.email} onChange={e => setEmail(e.target.value)} />
                     </Form.Group> : patient?.email}
 
@@ -139,7 +139,7 @@ function PatientForm () {
                 <th style={{ textAlign: 'right' }}>Phone</th>
                 <td>
                   {edit
-                    ? <Form.Group className='mb-3' controlId='patientForm.phone'>
+                    ? <Form.Group className='mb-3' controlId='patientEdit.phone'>
                       <Form.Control type='tel' defaultValue={patient?.phone} onChange={e => setPhone(e.target.value)} />
                     </Form.Group> : patient?.phone}
                 </td>
@@ -148,7 +148,7 @@ function PatientForm () {
                 <th style={{ textAlign: 'right' }}>Address</th>
                 <td>
                   {edit
-                    ? <Form.Group className='mb-3' controlId='patientForm.address'>
+                    ? <Form.Group className='mb-3' controlId='patientEdit.address'>
                       <Form.Control type='text' required defaultValue={patient?.address} onChange={e => setAddress(e.target.value)} />
                     </Form.Group> : patient?.address}
                 </td>
@@ -157,7 +157,7 @@ function PatientForm () {
                 <th style={{ textAlign: 'right' }}>Birthday</th>
                 <td>
                   {edit
-                    ? <Form.Group className='mb-3' controlId='patientForm.bday'>
+                    ? <Form.Group className='mb-3' controlId='patientEdit.bday'>
                       <Form.Control required type='date' defaultValue={patient?.birthday} onChange={e => setBday(e.target.value)} />
                     </Form.Group>
                     : patient?.birthday}
@@ -234,4 +234,4 @@ function PatientForm () {
     </Container>
   )
 }
-export default PatientForm
+export default PatientDashboard
